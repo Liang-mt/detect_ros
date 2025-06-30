@@ -1,0 +1,2 @@
+detection_launch:object_detector:result_viewer:video_publisher
+-DCATKIN_DEVEL_PREFIX=/home/mc/Desktop/detect_ws/devel -DCMAKE_INSTALL_PREFIX=/home/mc/Desktop/detect_ws/install -G Unix Makefiles

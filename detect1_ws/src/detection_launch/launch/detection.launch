@@ -1,0 +1,27 @@
+<launch>
+    <!-- 设置环境变量 -->
+    <env name="LANG" value="en_US.UTF-8"/>
+    <env name="LC_ALL" value="en_US.UTF-8"/>
+    
+    <!-- 视频发布节点 -->
+    <node name="video_publisher" pkg="video_publisher" type="video_publisher_node" output="screen">
+        <param name="video_source" value="$(find object_detector)/config_files/test.mp4" />
+        <param name="is_video_file" value="true" />
+        <param name="frame_rate" value="30" />
+    </node>
+
+    <!-- 目标检测节点 -->
+    <node name="object_detection" pkg="object_detector" type="object_detection_node" output="screen">
+        <param name="model_path" value="$(find object_detector)/config_files/yolov5s.onnx" />
+        <param name="classes_file" value="$(find object_detector)/config_files/classes.txt" />
+        <param name="use_cuda" value="false" />
+        <param name="conf_threshold" value="0.4" />
+        <param name="nms_threshold" value="0.4" />
+        <param name="score_threshold" value="0.2" />
+        <param name="input_width" value="640" />
+        <param name="input_height" value="640" />
+    </node>
+
+    <!-- 结果显示节点 -->
+    <node name="result_viewer" pkg="result_viewer" type="result_viewer_node" output="screen"/>
+</launch>

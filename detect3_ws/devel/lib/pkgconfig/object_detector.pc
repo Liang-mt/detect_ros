@@ -1,0 +1,8 @@
+prefix=/home/mc/Desktop/detect_ws/devel
+
+Name: object_detector
+Description: Description of object_detector
+Version: 0.0.0
+Cflags: -I/home/mc/Desktop/detect_ws/src/object_detector/include
+Libs: -L${prefix}/lib -lobject_detector
+Requires: roscpp std_msgs sensor_msgs image_transport cv_bridge vision_msgs

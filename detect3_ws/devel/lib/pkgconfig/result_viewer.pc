@@ -1,0 +1,8 @@
+prefix=/home/mc/Desktop/detect_ws/devel
+
+Name: result_viewer
+Description: Description of result_viewer
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs sensor_msgs image_transport cv_bridge vision_msgs
